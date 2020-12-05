@@ -1,14 +1,5 @@
-#create an env var in cmdlet:
-#python -m venv venv_name
-#activate the venv:
-#venv_name\Scripts\activate
-#Install the flask within the venv area:
-#pip install Flask
-#running the flask app by: flask run
-#* Running on http://127.0.0.1:5000/
 from flask import Flask, render_template
 import requests
-#pip install requests bs4
 from bs4 import BeautifulSoup
 import time
 import threading
