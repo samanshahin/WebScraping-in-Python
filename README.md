@@ -1,3 +1,5 @@
+Scraping data from sources around the internet with Python and BeautifulSoup library in Flask framework
+
 # BrokerApp
  
 This is simple project using [Python](https://www.python.org/) with [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library for scraping data from [Tehran Stock Exchange](http://www.tsetmc.com/Loader.aspx?ParTree=15) website.
