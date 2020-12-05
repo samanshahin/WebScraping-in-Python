@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Broker App</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      @media(max-width: 500px){
+        .graph-holder{
+            max-width: 400px;
+        }
+      }
+      .top-title{
+          font-size: large;
+          color: burlywood;
+          direction: rtl;
+          text-align: center;
+      }
+      .down-title, a.linkk{
+          font-size: medium;
+          color: aqua;
+          direction: rtl;
+          text-align: center;
+      }
+      .bg-top-1{
+          background-color: #394555;
+          padding-top: 1.6%;
+          padding-bottom: 1.6%;
+      }
+      .bg-top-2{
+          background-color: #1d2329;
+          padding-top: 1.6%;
+          padding-bottom: 1.6%;
+      }
+      .bg-top-3{
+          background-color: cadetblue;
+      }
+      .bg-top-4{
+          background-color: black;
+      }
+      .bg-all{
+          background-color: #343A40;
+      }
+      p{
+          color: blanchedalmond;
+          direction: rtl;
+      }
+      h2, h3{
+          color: chocolate;
+          direction: rtl;
+          text-align: right;
+      }
+      hr{
+          border-top-color: #545b61;
+          padding-top: 2%;
+      }
+      .text-news{
+          color: cornsilk;
+          direction: rtl;
+          text-align: right;
+      }
+      .theme-container {
+        padding: 5px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 123, 255, .15);
+        border: 1px solid rgba(0, 123, 255, .2);
+      }
+      .theme-grid-col {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: rgba(61, 120, 124, 0.15);
+        direction: rtl;
+      }
+      .co-container{
+          direction: rtl;
+          margin-bottom: 5px;
+      }
+      a{
+          text-decoration-line: none;
+          color:cornsilk;
+          direction: rtl;
+      }
+      a:hover{
+          text-decoration-line: none;
+          color:cornsilk;
+      }
+      .news_logo{
+          font-size: xx-small;
+          color: crimson;
+          font-weight: 700;
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.5/examples/navbar-static/navbar-top.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.5/examples/grid/grid.css" rel="stylesheet">
+  </head>
+  <body class="bg-all">
+    <div class="navbar navbar-expand-lg navbar-dark text-center">
+        <div class="container">
+            <div class="container text-center">
+                <a class="navbar-brand" href="#">BROKER APP</a>
+            </div>
+            <div class="container bg-top-1 text-center">
+                <table>
+                    <tbody>
+                        <tr><td class="top-title">شاخص کل</td></tr>
+                        <tr><td id="general-idx" class="down-title">{{ g_idx }}</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container bg-top-1 text-center">
+                <table>
+                    <tbody>
+                        <tr><td class="top-title">شاخص فرابورس</td></tr>
+                        <tr><td id="fara-idx" class="down-title">{{ fara_idx }}</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+<hr class="container">
+<div role="main" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>گراف شاخص‌های کلی</h3>
+            <div>
+                <img src="" class="graph-holder">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>شرکت‌های پرتراکنش</h3>
+            <div class="row co-container text-news">
+                <div class="col-6 theme-grid-col text-center">{{ custom_idx_one_name }}</div>
+                <div class="col-3 theme-grid-col text-center">{{ custom_idx_one_price}}</div>
+                <div class="col-3 theme-grid-col text-center">{{ custom_idx_one_pct }}</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>اطلاعیه‌های کُدال</h3>
+            <!-- must repeat this part-->
+            <div class="container theme-container text-news">
+                <a class="link-to-news" href="#">
+                    <div>
+                        <small> <a href="https://codal.ir">https://codal.ir</a></small>
+                    </div>
+                </a>
+            </div>
+            <!-- must repeat this part-->
+        </div>
+        <div class="col-md-4">
+            <h3>پیام‌های ناظر بازار</h3>
+            <!-- must repeat this part-->
+            {% for n in nazer_msg %}
+            <div class="container text-news">
+                    <div><small>
+                        {{ n.get_text() }}
+                    </small></div>
+            </div>
+            {% endfor %}
+            <!-- must repeat this part-->
+        </div>
+        <div class="col-md-4">
+            <h3>اخبار اقتصادی</h3>
+            <!-- must repeat this part-->
+            {% for d in m_news %}
+                <div class="container theme-container text-news">
+                    <div>
+                        <b class="news_logo"><a href="https://www.mehrnews.com/service/Economy">مهرنیوز</a></b>
+                        <small>{{ d.get_text() }}</small>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- must repeat this part-->
+        </div>
+    </div>
+</div><!-- /.container -->
+
+
+<footer class="container">
+    <hr> 
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+        <small class="d-block mb-3 text-muted">&copy; Eternal!</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-muted">درباره ما</h5>
+        <p class="list-unstyled text-small text-muted">
+          This is simple project using Python with BeautifulSoup library for scraping data from Tehran Stock Exchange website. 
+        </p>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-muted">تماس با ما</h5>
+        <p class="list-unstyled text-small text-muted">
+            saman_shahin@yahoo.com
+          </p>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-muted">لینک های مرتبط</h5>
+        <p class="list-unstyled text-small text-muted">
+            ...
+          </p>
+      </div>
+    </div>
+  </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script></body>
+</html>
